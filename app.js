@@ -41,7 +41,8 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-mongoose.connect('mongodb://localhost/Royal_Tag',{ useNewUrlParser: true,useUnifiedTopology: true }).then(function(){
+const URI ="mongodb+srv://rafay:Rafay123@cluster0.tyocc.mongodb.net/products?retryWrites=true&w=majority";
+mongoose.connect( URI,{ useNewUrlParser: true,useUnifiedTopology: true }).then(function(){
   console.log("database connected");
 }).catch(err=>{
   console.log(err);
